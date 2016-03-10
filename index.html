@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>CALENDAR FOR ANNIE</title>
-        <meta name="description" content="Calendar">
+        <meta name="description" content="width=device; user-scalable=0;">
         <link rel="stylesheet" href="main.css">
     </head>
     <body onload="calendar()">
@@ -101,6 +101,11 @@ if (month < 10) document.getElementById("showDate").innerHTML = year+'.'+ '0'+mo
     function calendar() {
       // This code innerText could not assign string to Span.
       //document.getElementById("hello").innerText = year+'.'+month+'.'+day;
+        
+        year = today.getFullYear();      //本年
+        month = today.getMonth()+1;    //本月
+        day = today.getDate();
+        document.getElementById("showDate").innerHTML = year+'.'+month+'';
         
         //本月第一天是星期几（距星期日离开的天数）
         var startDay = new Date(year, month-1, 1).getDay();
